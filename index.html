@@ -166,12 +166,14 @@ function chooseCancel(){
 }
 
 // ── 文件上传 ──────────────────────────────────────────────────
-const dz=document.getElementById('dz');
 function fiClick(){ document.getElementById('fi').click(); }
 function handleFiles(files){ add([...files]); }
-dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('drag')});
-dz.addEventListener('dragleave',()=>dz.classList.remove('drag'));
-dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('drag');add([...e.dataTransfer.files])});
+window.addEventListener('DOMContentLoaded',function(){
+  var dz=document.getElementById('dz');
+  dz.addEventListener('dragover',function(e){e.preventDefault();dz.classList.add('drag');});
+  dz.addEventListener('dragleave',function(){dz.classList.remove('drag');});
+  dz.addEventListener('drop',function(e){e.preventDefault();dz.classList.remove('drag');add([...e.dataTransfer.files]);});
+});
 
 function add(nf){nf.filter(f=>f.name.toLowerCase().endsWith('.pdf')).forEach(f=>{if(!FILES.find(x=>x.name===f.name))FILES.push(f)});render()}
 function rm(n){const i=FILES.findIndex(f=>f.name===n);if(i>-1)FILES.splice(i,1);render()}
