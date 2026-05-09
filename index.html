@@ -254,14 +254,14 @@ async function parsePDF(file){
       ws.push({t:it.str.trim(), x:it.transform[4], y:vp.height-it.transform[5]-it.height});
     }
     pages.push(ws);
-    lg(`  页${p}: ${ws.length}词`);
+    lg('  页'+p+': '+ws.length+'词');
   }
 
   // ── 第1页全局字段 ──────────────────────────────────────────
   const tansad_no = pick(pages[0],434,101,40,8);
   const invoice_no= pick(pages[0],440,197,40,8);
   const bill_no   = pick(pages[0],437,293,40,8);
-  lg(`  TANSAD:${tansad_no}  发票:${invoice_no}  提单:${bill_no}`);
+  lg('  TANSAD:'+tansad_no+'  发票:'+invoice_no+'  提单:'+bill_no);
 
   // ── 把所有词附加全局y坐标(gy = pi*10000 + y)，方便跨页处理 ──
   const allW=[];
