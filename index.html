@@ -12,95 +12,113 @@ body{font-family:"Microsoft YaHei",sans-serif;background:#f0f2f5;min-height:100v
 .main{max-width:960px;margin:28px auto;padding:0 16px}
 .card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.08);padding:22px;margin-bottom:18px}
 .card h2{font-size:14px;font-weight:700;color:#1a237e;margin-bottom:14px}
-.dz{border:2px dashed #90caf9;border-radius:10px;padding:36px 20px;text-align:center;cursor:pointer;background:#f5f9ff;transition:.2s}
-.dz:hover,.dz.drag{border-color:#1a237e;background:#e8eaf6}
+.upload-area{position:relative}
+.dz{border:2px dashed #90caf9;border-radius:10px;padding:36px 20px;text-align:center;background:#f5f9ff;transition:.2s}
+.dz.drag{border-color:#1a237e;background:#e8eaf6}
 .dz .ico{font-size:36px;margin-bottom:8px}
-.dz p{font-size:13px;color:#666}.dz b{color:#1a237e}
-#fi{display:none}
+.dz p{font-size:13px;color:#666}
+.dz b{color:#1a237e}
+.dz .sub{font-size:11px;color:#999;margin-top:5px}
+.pick-btn{display:inline-block;margin-top:12px;padding:8px 20px;background:#1a237e;color:#fff;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer}
+.pick-btn:hover{background:#283593}
 .fl{margin-top:10px;display:flex;flex-direction:column;gap:7px}
-.fi{display:flex;align-items:center;gap:9px;padding:9px 13px;background:#f5f5f5;border-radius:8px;font-size:13px}
-.fn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#333}
-.fs{color:#999;font-size:11px}
-.fd{cursor:pointer;color:#e53935;font-size:17px}
+.fi-item{display:flex;align-items:center;gap:9px;padding:9px 13px;background:#f5f5f5;border-radius:8px;font-size:13px}
+.fi-item .fn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#333}
+.fi-item .fs{color:#999;font-size:11px}
+.fi-item .fd{cursor:pointer;color:#e53935;font-size:17px;line-height:1;padding:0 4px}
 .fst{font-size:11px;padding:2px 8px;border-radius:10px}
-.sw{background:#fff3e0;color:#e65100}.sd{background:#e8f5e9;color:#2e7d32}.se{background:#ffebee;color:#c62828}
-.row{display:flex;gap:10px;flex-wrap:wrap}
+.sw{background:#fff3e0;color:#e65100}
+.sd{background:#e8f5e9;color:#2e7d32}
+.se{background:#ffebee;color:#c62828}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:5px;padding:9px 22px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer}
 .bp{background:#1a237e;color:#fff}.bp:hover{background:#283593}.bp:disabled{opacity:.4;cursor:not-allowed}
 .bg{background:#2e7d32;color:#fff}.bg:hover{background:#1b5e20}
 .bs{background:#e8eaf6;color:#1a237e}.bs:hover{background:#c5cae9}
+.br{background:#e53935;color:#fff}.br:hover{background:#c62828}
 .log{background:#0d1117;color:#e6edf3;border-radius:8px;padding:12px 14px;font-family:Consolas,monospace;font-size:12px;min-height:55px;max-height:200px;overflow-y:auto;line-height:1.85;white-space:pre-wrap;margin-top:12px}
 .ok{color:#3fb950}.er{color:#f85149}.in{color:#58a6ff}
+.hist-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#e8eaf6;border-radius:8px;margin-bottom:14px}
+.hist-bar .hi{font-size:13px;color:#1a237e;flex:1}
+.hist-bar .hi b{font-weight:700}
+.hist-bar .ht{font-size:11px;color:#5c6bc0;margin-top:2px}
 .tw{overflow-x:auto;margin-top:10px}
 table{border-collapse:collapse;font-size:11.5px;min-width:100%}
 th{background:#1a237e;color:#fff;padding:7px 9px;text-align:center;white-space:nowrap;font-weight:500;font-size:11px}
 td{padding:6px 9px;border-bottom:1px solid #f0f0f0;text-align:center;white-space:nowrap;color:#333}
 tr:nth-child(even) td{background:#f8f9ff}
-.hist-bar{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#e8eaf6;border-radius:8px;margin-bottom:14px;flex-wrap:wrap}
-.hist-bar .hi{font-size:13px;color:#1a237e;flex:1}
-.hist-bar .hi b{font-weight:700}
-.hist-bar .ht{font-size:11px;color:#5c6bc0;margin-top:2px}
 .modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;display:flex;align-items:center;justify-content:center}
-.modal{background:#fff;border-radius:14px;padding:28px 28px 22px;max-width:400px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.18)}
+.modal{background:#fff;border-radius:14px;padding:28px;max-width:400px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,.18)}
 .modal h3{font-size:16px;font-weight:700;color:#1a237e;margin-bottom:8px}
 .modal p{font-size:13px;color:#555;margin-bottom:20px;line-height:1.7}
-.modal .mbtn{width:100%;padding:11px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:10px}
-.modal .m-add{background:#1a237e;color:#fff}.modal .m-add:hover{background:#283593}
-.modal .m-new{background:#f5f5f5;color:#333}.modal .m-new:hover{background:#e0e0e0}
-.modal .m-cancel{background:none;color:#999;font-size:12px;font-weight:400;padding:6px}
+.modal .mbtn{width:100%;padding:11px;border:none;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;margin-bottom:10px;text-align:center}
+.m-add{background:#1a237e;color:#fff}
+.m-new{background:#f5f5f5;color:#333}
+.m-cancel{background:none;color:#999;font-size:12px;font-weight:400}
 </style>
 </head>
 <body>
-<div class="hdr"><div style="font-size:26px">🛃</div>
-<div><h1>TRA 报关单 → Excel<small>纯本地 · 无需AI · 兼容单品/多品格式</small></h1></div>
+
+<div class="hdr">
+  <div style="font-size:26px">🛃</div>
+  <div><h1>TRA 报关单 → Excel<small>纯本地 · 无需AI · 兼容单品/多品格式</small></h1></div>
 </div>
+
 <div class="main">
 
-<div class="card">
-  <h2>① 上传 PDF 报关单（可多个）</h2>
-  <div class="dz" id="dz" onclick="fiClick()">
-    <div class="ico">📂</div>
-    <p><b>点击选择</b> 或拖拽 PDF 到这里</p>
-    <p style="font-size:11px;color:#999;margin-top:5px">TRA Assessment Document PDF，支持批量上传</p>
-  </div>
-  <input type="file" id="fi" multiple accept=".pdf" style="display:none" onchange="handleFiles(this.files)">
-  <div class="fl" id="fl"></div>
-</div>
-
-<div class="card">
-  <h2>② 提取数据</h2>
-  <div class="row">
-    <button class="btn bp" id="runBtn" onclick="run()" disabled>▶ 开始提取</button>
-    <button class="btn bs" onclick="clearAll()">🗑 清空</button>
-  </div>
-  <div class="log" id="log">等待上传PDF…</div>
-</div>
-
-<div class="card" id="rc" style="display:none">
-  <h2>③ 预览 &amp; 下载 Excel</h2>
-  <div class="hist-bar" id="histBar" style="display:none">
-    <div>
-      <div class="hi">📋 已有历史记录：共 <b id="histCount">0</b> 条</div>
-      <div class="ht" id="histTime"></div>
+  <!-- 上传 -->
+  <div class="card">
+    <h2>① 上传 PDF 报关单（可多个）</h2>
+    <div class="upload-area">
+      <div class="dz" id="dz">
+        <div class="ico">📂</div>
+        <p><b>拖拽 PDF 到这里</b></p>
+        <p class="sub">TRA Assessment Document PDF，支持批量</p>
+        <div class="pick-btn" id="pickBtn">点击选择文件</div>
+      </div>
+      <!-- 隐藏的文件输入 -->
+      <input type="file" id="fileInput" multiple accept=".pdf"
+             style="position:absolute;width:1px;height:1px;opacity:0;top:0;left:0">
     </div>
+    <div class="fl" id="fileList"></div>
   </div>
-  <div class="row" style="margin-bottom:14px">
-    <button class="btn bg" onclick="dl()">📥 下载 Excel (.xlsx)</button>
-    <button class="btn bs" onclick="clearHistory()">🗑 清空历史</button>
+
+  <!-- 提取 -->
+  <div class="card">
+    <h2>② 提取数据</h2>
+    <div class="btns">
+      <button class="btn bp" id="runBtn" onclick="startRun()" disabled>▶ 开始提取</button>
+      <button class="btn bs" onclick="resetFiles()">🗑 清空文件</button>
+    </div>
+    <div class="log" id="logBox">等待上传PDF…</div>
   </div>
-  <div class="tw"><table id="tbl"></table></div>
-</div>
+
+  <!-- 结果 -->
+  <div class="card" id="resultCard" style="display:none">
+    <h2>③ 预览 &amp; 下载 Excel</h2>
+    <div class="hist-bar" id="histBar" style="display:none">
+      <div class="hi">
+        📋 当前共 <b id="histCount">0</b> 条记录
+        <div class="ht" id="histTime"></div>
+      </div>
+    </div>
+    <div class="btns" style="margin-bottom:14px">
+      <button class="btn bg" onclick="downloadExcel()">📥 下载 Excel</button>
+      <button class="btn br" onclick="clearHistory()">🗑 清空历史</button>
+    </div>
+    <div class="tw"><table id="previewTable"></table></div>
+  </div>
 
 </div>
 
-<!-- 弹窗：检测到历史数据时询问用户 -->
+<!-- 历史记录弹窗 -->
 <div class="modal-bg" id="modalBg" style="display:none">
   <div class="modal">
     <h3>📋 检测到历史记录</h3>
-    <p>上次保存了 <b id="mCount">0</b> 条记录（<span id="mTime"></span>）。<br>你想怎么处理？</p>
-    <button class="mbtn m-add" onclick="chooseAppend()">➕ 在历史数据上继续追加</button>
-    <button class="mbtn m-new" onclick="chooseNew()">🆕 清空历史，新建表格</button>
-    <button class="mbtn m-cancel" onclick="chooseCancel()">取消（只看，不做任何改动）</button>
+    <p>上次保存了 <b id="mCount">0</b> 条记录<br>（<span id="mTime"></span>）<br><br>你想怎么处理？</p>
+    <button class="mbtn m-add" onclick="doAppend()">➕ 继续追加到历史数据</button>
+    <button class="mbtn m-new" onclick="doNew()">🆕 清空历史，重新开始</button>
+    <button class="mbtn m-cancel" onclick="doView()">只查看历史，不做改动</button>
   </div>
 </div>
 
@@ -109,311 +127,317 @@ tr:nth-child(even) td{background:#f8f9ff}
 <script>
 pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-const FILES=[];
-const HDR=['发票编码 Invoice NO','提单号 BILL NO','TANSAD NO','申报产品名称','规格型号 Specification',
-  '海关编码 H.S.Code','海关调整编码',
-  '申报数量','海关调整数量',
-  '申报单价 USD','海关调整单价 USD',
-  '申报估值 USD','海关估值 USD',
-  'IMP Rate','CPF Rate','RDL Rate','VAT Rate'];
-let ROWS=[];
-const STORAGE_KEY='tra_rows_v1';
+// ── 全局数据 ──────────────────────────────────────────────────
+var FILES = [];
+var ROWS = [];
+var STORAGE_KEY = 'tra_rows_v1';
+var HDR = ['发票编码 Invoice NO','提单号 BILL NO','TANSAD NO','申报产品名称',
+  '规格型号 Specification','海关编码 H.S.Code','海关调整编码',
+  '申报数量','海关调整数量','申报单价 USD','海关调整单价 USD',
+  '申报估值 USD','海关估值 USD','IMP Rate','CPF Rate','RDL Rate','VAT Rate'];
 
-// ── localStorage 读写 ─────────────────────────────────────────
-function saveHistory(){
+// ── 页面初始化 ────────────────────────────────────────────────
+window.onload = function() {
+  // 绑定点击选择文件
+  document.getElementById('pickBtn').onclick = function() {
+    document.getElementById('fileInput').click();
+  };
+
+  // 绑定文件选择变化
+  document.getElementById('fileInput').onchange = function() {
+    addFiles(this.files);
+    this.value = ''; // 清空，允许重复选同一文件
+  };
+
+  // 绑定拖拽
+  var dz = document.getElementById('dz');
+  dz.ondragover = function(e) { e.preventDefault(); dz.classList.add('drag'); };
+  dz.ondragleave = function() { dz.classList.remove('drag'); };
+  dz.ondrop = function(e) {
+    e.preventDefault();
+    dz.classList.remove('drag');
+    addFiles(e.dataTransfer.files);
+  };
+
+  // 检查历史记录
+  var hist = loadHistory();
+  if (hist && hist.rows && hist.rows.length > 0) {
+    document.getElementById('mCount').textContent = hist.rows.length;
+    document.getElementById('mTime').textContent = hist.time || '';
+    document.getElementById('modalBg').style.display = 'flex';
+  }
+};
+
+// ── 历史记录弹窗 ─────────────────────────────────────────────
+function doAppend() {
+  var hist = loadHistory();
+  if (hist && hist.rows) ROWS = hist.rows.slice();
+  document.getElementById('modalBg').style.display = 'none';
+  showResult();
+}
+function doNew() {
+  localStorage.removeItem(STORAGE_KEY);
+  ROWS = [];
+  document.getElementById('modalBg').style.display = 'none';
+}
+function doView() {
+  var hist = loadHistory();
+  if (hist && hist.rows) ROWS = hist.rows.slice();
+  document.getElementById('modalBg').style.display = 'none';
+  showResult();
+}
+
+// ── localStorage ─────────────────────────────────────────────
+function saveHistory() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify({
     rows: ROWS,
     time: new Date().toLocaleString('zh-CN')
   }));
 }
-function loadHistory(){
-  try{ return JSON.parse(localStorage.getItem(STORAGE_KEY)||'null'); }
-  catch(e){ return null; }
+function loadHistory() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }
+  catch(e) { return null; }
 }
-function clearHistory(){
-  if(!confirm('确定要清空所有历史记录吗？')) return;
+function clearHistory() {
+  if (!confirm('确定清空所有历史记录？')) return;
   localStorage.removeItem(STORAGE_KEY);
-  ROWS=[];
-  document.getElementById('rc').style.display='none';
-  document.getElementById('log').textContent='历史已清空，等待上传PDF…';
+  ROWS = [];
+  document.getElementById('resultCard').style.display = 'none';
+  log('历史已清空。');
 }
 
-// ── 页面加载时检查历史记录 ────────────────────────────────────
-window.addEventListener('DOMContentLoaded', ()=>{
-  const hist=loadHistory();
-  if(hist && hist.rows && hist.rows.length>0){
-    document.getElementById('mCount').textContent=hist.rows.length;
-    document.getElementById('mTime').textContent=hist.time||'';
-    document.getElementById('modalBg').style.display='flex';
+// ── 文件管理 ─────────────────────────────────────────────────
+function addFiles(fileList) {
+  var arr = Array.prototype.slice.call(fileList);
+  arr.forEach(function(f) {
+    if (!f.name.toLowerCase().endsWith('.pdf')) return;
+    if (FILES.find(function(x){ return x.name === f.name; })) return;
+    FILES.push(f);
+  });
+  renderFileList();
+}
+function removeFile(name) {
+  FILES = FILES.filter(function(f){ return f.name !== name; });
+  renderFileList();
+}
+function renderFileList() {
+  var html = FILES.map(function(f) {
+    return '<div class="fi-item">' +
+      '<span>📄</span>' +
+      '<span class="fn" title="' + f.name + '">' + f.name + '</span>' +
+      '<span class="fs">' + (f.size/1024).toFixed(0) + 'KB</span>' +
+      '<span class="fst sw" id="st_' + safeid(f.name) + '">等待</span>' +
+      '<span class="fd" onclick="removeFile(' + JSON.stringify(f.name) + ')">✕</span>' +
+      '</div>';
+  }).join('');
+  document.getElementById('fileList').innerHTML = html;
+  document.getElementById('runBtn').disabled = FILES.length === 0;
+}
+function safeid(n) { return n.replace(/[^a-zA-Z0-9]/g, '_'); }
+function setSt(name, text, cls) {
+  var el = document.getElementById('st_' + safeid(name));
+  if (el) { el.textContent = text; el.className = 'fst ' + cls; }
+}
+function resetFiles() {
+  FILES = [];
+  renderFileList();
+  document.getElementById('logBox').textContent = '等待上传PDF…';
+}
+
+// ── 日志 ─────────────────────────────────────────────────────
+function log(msg, cls) {
+  var box = document.getElementById('logBox');
+  var span = document.createElement('span');
+  if (cls) span.className = cls;
+  span.textContent = msg + '\n';
+  box.appendChild(span);
+  box.scrollTop = box.scrollHeight;
+}
+function clearLog() { document.getElementById('logBox').innerHTML = ''; }
+
+// ── 主流程 ───────────────────────────────────────────────────
+async function startRun() {
+  document.getElementById('runBtn').disabled = true;
+  clearLog();
+  var newRows = [];
+  for (var i = 0; i < FILES.length; i++) {
+    var f = FILES[i];
+    log('[' + (i+1) + '/' + FILES.length + '] ' + f.name, 'in');
+    setSt(f.name, '处理中…', 'sw');
+    try {
+      var items = await parsePDF(f);
+      log('  ✓ 提取到 ' + items.length + ' 行记录', 'ok');
+      newRows = newRows.concat(items);
+      setSt(f.name, '✓ ' + items.length + '条', 'sd');
+    } catch(e) {
+      log('  ✗ ' + e.message, 'er');
+      setSt(f.name, '错误', 'se');
+    }
   }
-});
-function chooseAppend(){
-  const hist=loadHistory();
-  if(hist && hist.rows) ROWS=[...hist.rows];
-  document.getElementById('modalBg').style.display='none';
-  showResult();
-}
-function chooseNew(){
-  localStorage.removeItem(STORAGE_KEY);
-  ROWS=[];
-  document.getElementById('modalBg').style.display='none';
-}
-function chooseCancel(){
-  const hist=loadHistory();
-  if(hist && hist.rows) ROWS=[...hist.rows];
-  document.getElementById('modalBg').style.display='none';
-  showResult();
-}
-
-// ── 文件上传 ──────────────────────────────────────────────────
-function fiClick(){ document.getElementById('fi').click(); }
-function handleFiles(files){ add([...files]); }
-window.addEventListener('DOMContentLoaded',function(){
-  var dz=document.getElementById('dz');
-  dz.addEventListener('dragover',function(e){e.preventDefault();dz.classList.add('drag');});
-  dz.addEventListener('dragleave',function(){dz.classList.remove('drag');});
-  dz.addEventListener('drop',function(e){e.preventDefault();dz.classList.remove('drag');add([...e.dataTransfer.files]);});
-});
-
-function add(nf){nf.filter(f=>f.name.toLowerCase().endsWith('.pdf')).forEach(f=>{if(!FILES.find(x=>x.name===f.name))FILES.push(f)});render()}
-function rm(n){const i=FILES.findIndex(f=>f.name===n);if(i>-1)FILES.splice(i,1);render()}
-function eid(n){return btoa(encodeURIComponent(n)).replace(/[^a-z0-9]/gi,'_')}
-function render(){
-  document.getElementById('fl').innerHTML=FILES.map(f=>`
-    <div class="fi"><span>📄</span>
-      <span class="fn">${f.name}</span>
-      <span class="fs">${(f.size/1024).toFixed(0)}KB</span>
-      <span class="fst sw" id="s_${eid(f.name)}">等待</span>
-      <span class="fd" onclick='rm(${JSON.stringify(f.name)})'>✕</span>
-    </div>`).join('');
-  document.getElementById('runBtn').disabled=FILES.length===0;
-}
-function setSt(n,t,c){const e=document.getElementById('s_'+eid(n));if(e){e.textContent=t;e.className='fst '+c}}
-function lg(m,c=''){const b=document.getElementById('log'),s=document.createElement('span');if(c)s.className=c;s.textContent=m+'
-';b.appendChild(s);b.scrollTop=b.scrollHeight}
-function clrLog(){document.getElementById('log').innerHTML=''}
-
-async function run(){
-  document.getElementById('runBtn').disabled=true;
-  clrLog();
-  const newRows=[];
-  for(let i=0;i<FILES.length;i++){
-    const f=FILES[i];
-    lg('
-['+( i+1)+'/'+FILES.length+'] '+f.name,'in');
-    setSt(f.name,'处理中…','sw');
-    try{
-      const items=await parsePDF(f);
-      lg('  ✓ 提取到 '+items.length+' 行记录','ok');
-      newRows.push(...items);
-      setSt(f.name,'✓ '+items.length+'条','sd');
-    }catch(e){lg('  ✗ '+e.message,'er');setSt(f.name,'错误','se')}
-  }
-  ROWS.push(...newRows);
+  ROWS = ROWS.concat(newRows);
   saveHistory();
-  lg('
-完成！本次新增 '+newRows.length+' 条，累计共 '+ROWS.length+' 条。','ok');
-  document.getElementById('runBtn').disabled=false;
-  if(ROWS.length) showResult();
+  log('完成！本次新增 ' + newRows.length + ' 条，累计共 ' + ROWS.length + ' 条。', 'ok');
+  document.getElementById('runBtn').disabled = false;
+  if (ROWS.length > 0) showResult();
 }
 
-function showResult(){
-  const hist=loadHistory();
-  const hb=document.getElementById('histBar');
-  if(ROWS.length>0){
-    document.getElementById('histCount').textContent=ROWS.length;
-    document.getElementById('histTime').textContent=hist&&hist.time?'最后更新：'+hist.time:'';
-    hb.style.display='flex';
-  } else { hb.style.display='none'; }
-  renderTbl();
-  document.getElementById('rc').style.display='block';
-  document.getElementById('rc').scrollIntoView({behavior:'smooth'});
+function showResult() {
+  var hist = loadHistory();
+  document.getElementById('histCount').textContent = ROWS.length;
+  document.getElementById('histTime').textContent = hist && hist.time ? '最后更新：' + hist.time : '';
+  document.getElementById('histBar').style.display = ROWS.length > 0 ? 'flex' : 'none';
+  renderTable();
+  document.getElementById('resultCard').style.display = 'block';
+  document.getElementById('resultCard').scrollIntoView({behavior:'smooth'});
 }
 
-function clearAll(){FILES.length=0;render();clrLog();document.getElementById('log').textContent='等待上传PDF…';}
+// ── 表格渲染 & Excel下载 ─────────────────────────────────────
+function rowArr(r) {
+  return [r.invoice_no, r.bill_no, r.tansad_no, r.description, r.specification,
+    r.hs_code_declared, r.hs_code_assessed, r.qty_declared, r.qty_assessed,
+    r.unit_price_declared, r.unit_price_assessed, r.invoice_value_usd, r.customs_value_usd,
+    r.imp_rate, r.cpf_rate, r.rdl_rate, r.vat_rate];
+}
+function renderTable() {
+  var thead = '<tr>' + HDR.map(function(h){ return '<th>' + h + '</th>'; }).join('') + '</tr>';
+  var tbody = ROWS.map(function(r){
+    return '<tr>' + rowArr(r).map(function(v){ return '<td>' + (v||'') + '</td>'; }).join('') + '</tr>';
+  }).join('');
+  document.getElementById('previewTable').innerHTML = '<thead>' + thead + '</thead><tbody>' + tbody + '</tbody>';
+}
+function downloadExcel() {
+  var wb = XLSX.utils.book_new();
+  var wsData = [HDR];
+  ROWS.forEach(function(r, i) {
+    var row = rowArr(r);
+    row[12] = {f: 'I'+(i+2)+'*K'+(i+2)};
+    wsData.push(row);
+  });
+  var ws = XLSX.utils.aoa_to_sheet(wsData);
+  ws['!cols'] = [16,20,18,20,38,18,18,10,10,12,12,12,12,9,9,9,9].map(function(w){return {wch:w};});
+  XLSX.utils.book_append_sheet(wb, ws, 'Sheet2');
+  XLSX.writeFile(wb, 'TRA报关单_' + new Date().toISOString().slice(0,10) + '.xlsx');
+}
 
-// ══════════════════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════════════════
 //  PDF 解析核心
-//
-//  TRA报关单有两种结构：
-//  A型：每个主Item(x=72)只有1个子货物(x=44)  → 输出1行/主Item
-//  B型：每个主Item(x=72)有多个子货物(x=44)   → 输出N行/主Item
-//  本程序统一以子货物(x=44)为输出单位，兼容两种格式。
-// ══════════════════════════════════════════════════════════════════════════
-async function parsePDF(file){
-  const buf=await file.arrayBuffer();
-  const pdf=await pdfjsLib.getDocument({data:buf}).promise;
-
-  // 提取每页文字，y=距页顶距离
-  const pages=[];
-  for(let p=1;p<=pdf.numPages;p++){
-    const page=await pdf.getPage(p);
-    const ct=await page.getTextContent();
-    const vp=page.getViewport({scale:1});
-    const ws=[];
-    for(const it of ct.items){
-      if(!it.str.trim())continue;
-      ws.push({t:it.str.trim(), x:it.transform[4], y:vp.height-it.transform[5]-it.height});
+// ════════════════════════════════════════════════════════════
+async function parsePDF(file) {
+  var buf = await file.arrayBuffer();
+  var pdf = await pdfjsLib.getDocument({data: buf}).promise;
+  var pages = [];
+  for (var p = 1; p <= pdf.numPages; p++) {
+    var page = await pdf.getPage(p);
+    var ct = await page.getTextContent();
+    var vp = page.getViewport({scale: 1});
+    var ws = [];
+    for (var j = 0; j < ct.items.length; j++) {
+      var it = ct.items[j];
+      if (!it.str.trim()) continue;
+      ws.push({t: it.str.trim(), x: it.transform[4], y: vp.height - it.transform[5] - it.height});
     }
     pages.push(ws);
-    lg('  页'+p+': '+ws.length+'词');
+    log('  页' + p + ': ' + ws.length + '词');
   }
 
-  // ── 第1页全局字段 ──────────────────────────────────────────
-  const tansad_no = pick(pages[0],434,101,40,8);
-  const invoice_no= pick(pages[0],440,197,40,8);
-  const bill_no   = pick(pages[0],437,293,40,8);
-  lg('  TANSAD:'+tansad_no+'  发票:'+invoice_no+'  提单:'+bill_no);
+  var p1 = pages[0];
+  var tansad_no = pick(p1, 434, 101, 40, 8);
+  var invoice_no = pick(p1, 440, 197, 40, 8);
+  var bill_no = pick(p1, 437, 293, 40, 8);
+  log('  TANSAD:' + tansad_no + '  发票:' + invoice_no + '  提单:' + bill_no);
 
-  // ── 把所有词附加全局y坐标(gy = pi*10000 + y)，方便跨页处理 ──
-  const allW=[];
-  for(let pi=0;pi<pages.length;pi++){
-    for(const w of pages[pi]) allW.push({...w, pi, gy:pi*10000+w.y});
+  var allW = [];
+  for (var pi = 0; pi < pages.length; pi++) {
+    for (var wi = 0; wi < pages[pi].length; wi++) {
+      var w = pages[pi][wi];
+      allW.push({t: w.t, x: w.x, y: w.y, pi: pi, gy: pi * 10000 + w.y});
+    }
   }
 
-  // ── 找所有主Item(x≈72，数字1-20) ────────────────────────────
-  const mainItems=allW
-    .filter(w=>w.x>68&&w.x<80&&/^\d{1,2}$/.test(w.t)&&+w.t>=1&&+w.t<=20)
-    .sort((a,b)=>a.gy-b.gy);
+  var mainItems = allW.filter(function(w) {
+    return w.x > 68 && w.x < 80 && /^\d{1,2}$/.test(w.t) && +w.t >= 1 && +w.t <= 20;
+  }).sort(function(a,b){ return a.gy - b.gy; });
 
-  const results=[];
-  const seenMain=new Set();
+  var results = [];
+  var seenMain = {};
 
-  for(let mi=0;mi<mainItems.length;mi++){
-    const mw=mainItems[mi];
-    const mKey=`${tansad_no}_M${mw.gy}`;
-    if(seenMain.has(mKey))continue;
-    seenMain.add(mKey);
+  for (var mi = 0; mi < mainItems.length; mi++) {
+    var mw = mainItems[mi];
+    var mKey = tansad_no + '_M' + mw.gy;
+    if (seenMain[mKey]) continue;
+    seenMain[mKey] = true;
 
-    const nextM=mainItems[mi+1];
-    const gyS=mw.gy, gyE=nextM?nextM.gy:Infinity;
+    var nextM = mainItems[mi + 1];
+    var gyS = mw.gy, gyE = nextM ? nextM.gy : Infinity;
+    var scope = allW.filter(function(w){ return w.gy >= gyS && w.gy < gyE; });
 
-    // 该主Item范围内的所有词
-    const scope=allW.filter(w=>w.gy>=gyS&&w.gy<gyE);
+    var mhdr = null;
+    for (var si = 0; si < scope.length; si++) {
+      if (scope[si].t.indexOf('28.Model') === 0 && scope[si].x > 55) { mhdr = scope[si]; break; }
+    }
+    var mhdrGy = mhdr ? mhdr.gy : gyS + 500;
 
-    // 找28.Model表头（x≈62，startsWith '28.Model'）
-    const mhdr=scope.find(w=>w.t.startsWith('28.Model')&&w.x>55);
-    const mhdrGy=mhdr?mhdr.gy:gyS+500; // 如果没找到，设一个中间值
+    var preScope = scope.filter(function(w){ return w.gy < mhdrGy; });
+    var hsDw = preScope.filter(function(w){ return w.t==='D' && w.x>293 && w.x<305; }).sort(function(a,b){return a.gy-b.gy;})[0];
+    var hsAw = preScope.filter(function(w){ return w.t==='A' && w.x>293 && w.x<305; }).sort(function(a,b){return a.gy-b.gy;})[0];
+    var hs_d = hsDw ? (scope.find(function(w){ return w.pi===hsDw.pi && w.x>322 && w.x<362 && Math.abs(w.y-hsDw.y)<5; }) || {t:''}).t : '';
+    var hs_a = hsAw ? (scope.find(function(w){ return w.pi===hsAw.pi && w.x>322 && w.x<362 && Math.abs(w.y-hsAw.y)<5; }) || {t:''}).t : '';
 
-    // ── HS Code（在28.Model之前的D/A区）──────────────────────
-    const preScope=scope.filter(w=>w.gy<mhdrGy);
-    const hsDw=preScope.filter(w=>w.t==='D'&&w.x>293&&w.x<305).sort((a,b)=>a.gy-b.gy)[0];
-    const hsAw=preScope.filter(w=>w.t==='A'&&w.x>293&&w.x<305).sort((a,b)=>a.gy-b.gy)[0];
-    const hs_d=hsDw?scope.find(w=>w.pi===hsDw.pi&&w.x>322&&w.x<362&&Math.abs(w.y-hsDw.y)<5)?.t||'':'';
-    const hs_a=hsAw?scope.find(w=>w.pi===hsAw.pi&&w.x>322&&w.x<362&&Math.abs(w.y-hsAw.y)<5)?.t||'':'';
+    var ir = txR(scope,'IMP'), cr = txR(scope,'CPF'), rr = txR(scope,'RDL'), vr = txR(scope,'VAT');
 
-    // ── 税率（直接找IMP/CPF/RDL/VAT，不依赖"29."）──────────────
-    const ir=txR(scope,'IMP'); const cr=txR(scope,'CPF');
-    const rr=txR(scope,'RDL'); const vr=txR(scope,'VAT');
+    var subItems = scope.filter(function(w){
+      return w.x > 40 && w.x < 55 && /^\d{1,2}$/.test(w.t) && +w.t >= 1 && +w.t <= 20 && w.gy > mhdrGy;
+    }).sort(function(a,b){ return a.gy - b.gy; });
 
-    // ── 子货物（x≈44，数字，在28.Model之后）─────────────────────
-    const subItems=scope
-      .filter(w=>w.x>40&&w.x<55&&/^\d{1,2}$/.test(w.t)&&+w.t>=1&&+w.t<=20&&w.gy>mhdrGy)
-      .sort((a,b)=>a.gy-b.gy);
+    for (var subi = 0; subi < subItems.length; subi++) {
+      var sw = subItems[subi];
+      var dRow = scope.filter(function(w){ return w.t==='D' && w.x>293 && w.x<305 && w.gy>mhdrGy && w.gy<sw.gy; }).sort(function(a,b){return b.gy-a.gy;})[0];
+      var aRow = scope.filter(function(w){ return w.t==='A' && w.x>293 && w.x<305 && w.gy>sw.gy; }).sort(function(a,b){return a.gy-b.gy;})[0];
+      if (!dRow) continue;
 
-    for(const sw of subItems){
-      // 找Model表格里该子货物的D行：在mhdrGy之后、sw.gy之前，最近的D
-      const dRow=scope
-        .filter(w=>w.t==='D'&&w.x>293&&w.x<305&&w.gy>mhdrGy&&w.gy<sw.gy)
-        .sort((a,b)=>b.gy-a.gy)[0];
+      var desc = scope.filter(function(w){ return w.pi===dRow.pi && w.x>32 && w.x<200 && w.gy>mhdrGy && w.gy<sw.gy && !isN(w.t); }).sort(function(a,b){return a.y-b.y||a.x-b.x;}).map(function(w){return w.t;}).join(' ').trim();
+      var spec = scope.filter(function(w){ return w.pi===dRow.pi && w.x>195 && w.x<295 && w.gy>mhdrGy && w.gy<(aRow?aRow.gy+5:sw.gy+30) && !isN(w.t); }).sort(function(a,b){return a.y-b.y||a.x-b.x;}).map(function(w){return w.t;}).join(' ').trim();
 
-      // A行：在sw.gy之后，最近的A
-      const aRow=scope
-        .filter(w=>w.t==='A'&&w.x>293&&w.x<305&&w.gy>sw.gy)
-        .sort((a,b)=>a.gy-b.gy)[0];
-
-      if(!dRow)continue; // 没有D行则跳过
-
-      // ── 描述（x=32-200，D行上下约20pt范围，排除纯数字）──────
-      // 描述：从28.Model表头行之后(mhdrGy)到子货物行之前，x=32-200，排除数字
-      // 用mhdrGy作下限可自动去掉"No 28.Model, Specification"等表头文字
-      const mhdrY_local = mhdr ? mhdr.y : 0; // 表头在当前页的y值
-      const mhdrPi_local = mhdr ? mhdr.pi : 0;
-      const desc=scope
-        .filter(w=>w.pi===dRow.pi&&w.x>32&&w.x<200&&w.gy>mhdrGy&&w.gy<sw.gy&&!isN(w.t))
-        .sort((a,b)=>a.y-b.y||a.x-b.x)
-        .map(w=>w.t).join(' ').trim();
-
-      // ── 规格型号（x=195-295，同样从mhdrGy之后开始，排除"Component"等表头）──
-      const spec=scope
-        .filter(w=>w.pi===dRow.pi&&w.x>195&&w.x<295&&w.gy>mhdrGy&&w.gy<(aRow?aRow.gy+5:sw.gy+30)&&!isN(w.t))
-        .sort((a,b)=>a.y-b.y||a.x-b.x)
-        .map(w=>w.t).join(' ').trim();
-
-      // ── 数量/单价/发票金额（x>315，D行同y）──────────────────
-      let qty_d='',price_d='',inv_d='';
-      {
-        const ns=scope.filter(w=>w.pi===dRow.pi&&isN(w.t)&&Math.abs(w.y-dRow.y)<6&&w.x>315).sort((a,b)=>a.x-b.x);
-        if(ns[0])qty_d=sc(ns[0].t); if(ns[1])price_d=sc(ns[1].t); if(ns[2])inv_d=sc(ns[2].t);
-      }
-      let qty_a='',price_a='',inv_a='';
-      if(aRow){
-        const ns=scope.filter(w=>w.pi===aRow.pi&&isN(w.t)&&Math.abs(w.y-aRow.y)<6&&w.x>315).sort((a,b)=>a.x-b.x);
-        if(ns[0])qty_a=sc(ns[0].t); if(ns[1])price_a=sc(ns[1].t); if(ns[2])inv_a=sc(ns[2].t);
+      var qty_d='', price_d='', inv_d='', qty_a='', price_a='', inv_a='';
+      var ns_d = scope.filter(function(w){ return w.pi===dRow.pi && isN(w.t) && Math.abs(w.y-dRow.y)<6 && w.x>315; }).sort(function(a,b){return a.x-b.x;});
+      if (ns_d[0]) qty_d = sc(ns_d[0].t); if (ns_d[1]) price_d = sc(ns_d[1].t); if (ns_d[2]) inv_d = sc(ns_d[2].t);
+      if (aRow) {
+        var ns_a = scope.filter(function(w){ return w.pi===aRow.pi && isN(w.t) && Math.abs(w.y-aRow.y)<6 && w.x>315; }).sort(function(a,b){return a.x-b.x;});
+        if (ns_a[0]) qty_a = sc(ns_a[0].t); if (ns_a[1]) price_a = sc(ns_a[1].t); if (ns_a[2]) inv_a = sc(ns_a[2].t);
       }
 
-      // 海关估值 = 海关调整数量 × 海关调整单价
-      const cval=((+qty_a||0)*(+price_a||0));
-
-      results.push({invoice_no,bill_no,tansad_no,
-        description:desc, specification:spec,
-        hs_code_declared:hs_d, hs_code_assessed:hs_a,
-        qty_declared:qty_d, qty_assessed:qty_a,
-        unit_price_declared:price_d, unit_price_assessed:price_a,
-        invoice_value_usd:inv_d,
-        customs_value_usd:cval?cval.toFixed(2):'',
-        imp_rate:pct(ir,3), cpf_rate:pct(cr,4), rdl_rate:pct(rr,3), vat_rate:pct(vr,3)
+      var cval = (parseFloat(qty_a)||0) * (parseFloat(price_a)||0);
+      results.push({
+        invoice_no: invoice_no, bill_no: bill_no, tansad_no: tansad_no,
+        description: desc, specification: spec,
+        hs_code_declared: hs_d, hs_code_assessed: hs_a,
+        qty_declared: qty_d, qty_assessed: qty_a,
+        unit_price_declared: price_d, unit_price_assessed: price_a,
+        invoice_value_usd: inv_d,
+        customs_value_usd: cval ? cval.toFixed(2) : '',
+        imp_rate: pct(ir,3), cpf_rate: pct(cr,4), rdl_rate: pct(rr,3), vat_rate: pct(vr,3)
       });
     }
   }
-
+  results.sort(function(a,b){ return 0; });
   return results;
 }
 
-// ── 工具函数 ──────────────────────────────────────────────────
-function pick(ws,tx,ty,dx,dy){
-  const c=ws.filter(w=>Math.abs(w.x-tx)<=dx&&Math.abs(w.y-ty)<=dy);
-  if(!c.length)return'';
-  return c.sort((a,b)=>(Math.abs(a.x-tx)+Math.abs(a.y-ty))-(Math.abs(b.x-tx)+Math.abs(b.y-ty)))[0].t;
+function pick(ws, tx, ty, dx, dy) {
+  var c = ws.filter(function(w){ return Math.abs(w.x-tx)<=dx && Math.abs(w.y-ty)<=dy; });
+  if (!c.length) return '';
+  c.sort(function(a,b){ return (Math.abs(a.x-tx)+Math.abs(a.y-ty))-(Math.abs(b.x-tx)+Math.abs(b.y-ty)); });
+  return c[0].t;
 }
-
-// 税率：在scope里直接找IMP/CPF/RDL/VAT，Rate列x≈200-250
-function txR(scope,type){
-  const tw=scope.find(w=>w.t===type&&w.x<55);
-  if(!tw)return'';
-  const rw=scope.find(w=>isN(w.t)&&w.pi===tw.pi&&Math.abs(w.y-tw.y)<6&&w.x>200&&w.x<250);
-  return rw?rw.t:'';
+function txR(scope, type) {
+  var tw = scope.find(function(w){ return w.t===type && w.x<55; });
+  if (!tw) return '';
+  var rw = scope.find(function(w){ return isN(w.t) && w.pi===tw.pi && Math.abs(w.y-tw.y)<6 && w.x>200 && w.x<250; });
+  return rw ? rw.t : '';
 }
-
-function isN(s){return/^[\d,]+\.?\d*$/.test(s)}
-function sc(s){return s.replace(/,/g,'')}
-function pct(s,d){return s?(parseFloat(s)/100).toFixed(d):''}
-
-// ── 预览表格 & 下载 ──────────────────────────────────────────
-function ra(r){return[r.invoice_no,r.bill_no,r.tansad_no,r.description,r.specification,
-  r.hs_code_declared,r.hs_code_assessed,r.qty_declared,r.qty_assessed,
-  r.unit_price_declared,r.unit_price_assessed,r.invoice_value_usd,r.customs_value_usd,
-  r.imp_rate,r.cpf_rate,r.rdl_rate,r.vat_rate]}
-
-function renderTbl(){
-  document.getElementById('tbl').innerHTML=
-    `<thead><tr>${HDR.map(h=>`<th>${h}</th>`).join('')}</tr></thead>`+
-    `<tbody>${ROWS.map(r=>`<tr>${ra(r).map(v=>`<td>${v||''}</td>`).join('')}</tr>`).join('')}</tbody>`;
-}
-
-function dl(){
-  const wb=XLSX.utils.book_new();
-  const wsData=[HDR];
-  ROWS.forEach((r,i)=>{
-    const row=ra(r);
-    row[12]={f:`I${i+2}*K${i+2}`}; // 海关估值=海关调整数量×海关调整单价
-    wsData.push(row);
-  });
-  const ws=XLSX.utils.aoa_to_sheet(wsData);
-  ws['!cols']=[16,20,18,20,38,18,18,10,10,12,12,12,12,9,9,9,9].map(w=>({wch:w}));
-  XLSX.utils.book_append_sheet(wb,ws,'Sheet2');
-  XLSX.writeFile(wb,`TRA报关单_${new Date().toISOString().slice(0,10)}.xlsx`);
-}
+function isN(s) { return /^[\d,]+\.?\d*$/.test(s); }
+function sc(s) { return s.replace(/,/g,''); }
+function pct(s, d) { return s ? (parseFloat(s)/100).toFixed(d) : ''; }
 </script>
 </body>
 </html>
